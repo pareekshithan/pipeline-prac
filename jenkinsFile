@@ -33,7 +33,7 @@ stages {
 							[[ -d "/opt/jenkins/workspace/Build/artifactory" ]] && rm -rf /opt/jenkins/workspace/Build/artifactory 
 							git clone https://github.com/pareekshithan/pipeline-prac.git
 							cd pipeline-prac
-							file=$(ls ABC_* | sort -n | tail -1)
+							file=$(ls ABC* | sort -n | tail -1)
 							if [[ -n "$file" ]]; then
 								filename="${file%.*}"
 								old_version=$(echo $filename | awk -F 'v' '{print $2}')
