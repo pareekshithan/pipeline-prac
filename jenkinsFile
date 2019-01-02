@@ -30,7 +30,7 @@ stages {
 							echo " -------------------------------- $(pwd)" 
 							[[ -d '/opt/jenkins/workspace/Build' ]] || sudo mkdir --parents '/opt/jenkins/workspace/Build'
 							cd /opt/jenkins/workspace/Build/
-							[[ -d "/opt/jenkins/workspace/Build/artifactory" ]] && rm -rf /opt/jenkins/workspace/Build/artifactory 
+							[[ -d "/opt/jenkins/workspace/Build/pipeline-prac" ]] && rm -rf /opt/jenkins/workspace/Build/pipeline-prac 
 							git clone https://github.com/pareekshithan/pipeline-prac.git
 							cd pipeline-prac
 							file=$(ls ABC_* | sort -n | tail -1)
