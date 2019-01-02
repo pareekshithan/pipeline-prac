@@ -31,8 +31,8 @@ stages {
 							[[ -d '/opt/jenkins/workspace/Build' ]] || mkdir --parents '/opt/jenkins/workspace/Build'
 							cd /opt/jenkins/workspace/Build/
 							[[ -d "/opt/jenkins/workspace/Build/artifactory" ]] && rm -rf /opt/jenkins/workspace/Build/artifactory 
-							git clone git@github.com:Anirudh48/artifactory.git
-							cd artifactory
+							git clone https://github.com/pareekshithan/pipeline-prac.git
+							cd pipeline-prac
 							file=$(ls ABC_* | sort -n | tail -1)
 							if [[ -n "$file" ]]; then
 								filename="${file%.*}"
@@ -43,7 +43,7 @@ stages {
 							fi    
 							echo -e "\nLAST_BUILD: $file \nOLD_BUILD_VERSION: $old_version \nNEW_BUILD_VERSION: $new_version"
 							
-							cp "/opt/jenkins/workspace/Build/c_programs/ABC.exe" "/opt/jenkins/workspace/Build/artifactory/ABC_v${new_version}.exe"
+							cp "/opt/jenkins/workspace/Build/c_programs/ABC.exe" "/opt/jenkins/workspace/Build/pipeline-prac/ABC_v${new_version}.exe"
 							
 							git config --global push.default simple
 							git config --global user.name "Jenkins"
@@ -72,8 +72,8 @@ stages {
 					set +x
 
 					[[ -d "./artifactory" ]] && rm -rf ./artifactory 
-					git clone git@github.com:Anirudh48/artifactory.git
-					cd artifactory
+					git clone https://github.com/pareekshithan/pipeline-prac.git
+					cd pipeline-prac
 					file=$(ls ABC_* | sort -n | tail -1) 
 
 				echo -e "\n\n**************************** This is a Deploy JOB $file **************************** "
@@ -102,8 +102,8 @@ stages {
 				set +x
 
 					[[ -d "./artifactory" ]] && rm -rf ./artifactory 
-					git clone git@github.com:Anirudh48/artifactory.git
-					cd artifactory
+					git clone https://github.com/pareekshithan/pipeline-prac.git
+					cd pipeline-prac
 					file=$(ls ABC_* | sort -n | tail -1)
 					
 				echo -e "\n\n**************************** This is a Deploy JOB for $file**************************** "
